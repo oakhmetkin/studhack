@@ -2,4 +2,4 @@
 
 - Pipeline.ipynb - генерация датасета
 
-- SolutionNN.ipynb - обучение нейронки (плохой результат RMSE - 0.38)
+- SolutionNN.ipynb - обучение нейронки (плохой результат RMSE - 2.39)
