@@ -18,3 +18,14 @@ for i in range(5):
     knns.append(knn)
 
 
+points_df = import_dataset_from_file('../Data/Point_dataset.txt')
+
+cols = ['x', 'y', 'map1', 'map2', 'map3', 'map4', 'map5', 'F']
+df = pd.DataFrame(columns=cols)
+df[['x', 'y', 'F']] = points_df[['x', 'y', 'z']]
+
+for i, knn in enumerate(knns):
+    xy = df[['x', 'y']].values.astype(np.float32)
+    df[f'map{i+1}'] = knn.predict(xy)
+
+df.to_csv('../Data/new_dataset.csv')
