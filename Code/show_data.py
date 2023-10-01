@@ -6,7 +6,7 @@ from dataloader import import_dataset_from_file
 
 
 fig, axs = plt.subplots(2, 3)
-axs = axs.flatten()
+axs_flat = axs.flat
 
 for j in range(5):
     # loading dataset
@@ -23,6 +23,7 @@ for j in range(5):
     knn.fit(XY, z)
 
     # showing
+    print('Showing results')
     h, w = (1000, 1000) # height X width
     img = np.zeros((h, w))
     y_range = np.linspace(ymin, ymax, h)
@@ -33,7 +34,8 @@ for j in range(5):
         pred = knn.predict(xy)
         img[i, :] = pred
 
-    axs[j].set_title(f'Map {j+1}')
-    axj = axs[j].imshow(img, cmap='gist_rainbow')
+    axs_flat[j].set_title(f'Map {j+1}')
+    axj = axs_flat[j].imshow(img, cmap='gist_rainbow')
 
+fig.colorbar(axj, ax=axs.ravel().tolist())
 plt.show()
