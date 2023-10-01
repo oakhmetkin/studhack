@@ -2,7 +2,7 @@ from sklearn.neighbors import KNeighborsRegressor
 import numpy as np
 import matplotlib.pyplot as plt
 
-from dataloader import import_dataset_from_file
+from Code.main import import_dataset_from_file
 
 
 fig, axs = plt.subplots(2, 3)

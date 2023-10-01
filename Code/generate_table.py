@@ -2,7 +2,7 @@ from sklearn.neighbors import KNeighborsRegressor
 import pandas as pd
 import numpy as np
 
-from dataloader import import_dataset_from_file
+from Code.main import import_dataset_from_file
 
 
 knns = []
